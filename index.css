@@ -1,0 +1,6 @@
+*{padding: 0;margin: 0;font-family: "黑体";}
+.wrap{width: 510px;margin: 0 auto;margin-top: 20px;}
+#del{width: 50px;height: 30px; margin-left: 440px; border: none;}
+#message{width: 490px;border: solid 2px violet;margin-top: 20px; padding: 5px;}
+#message h1{ border-top: 1px solid black; font-size: 30px; color: blue; line-height: 50px;}
+#message p{ font-size: 20px; line-height: 50px;}

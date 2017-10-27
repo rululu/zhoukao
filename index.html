@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="index.css" />
+		<script src="jquery-1.6.2.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<input type="text" name="" id="nei">
+			<input type="text" name="" id="nei1">
+			<input type="submit" name="" id="btn">
+			<div id="message"></div>
+		</div>
+	</body>
+	<script>
+		$("#btn").click(function(){
+			var value=$("#nei").val();
+			var value1=$("#nei1").val();
+			$.ajax({
+				url:"http://localhost:3000",
+				type:"POST",
+				data:{name:value,title:value1},
+				success:function(e){
+					console.log(e)
+					var str="";
+					for(var i in e){
+						var pl=e[i]
+						console.log(pl)
+						for(var i in pl){
+							str+='<h1>'+pl[i].name+'</h1>'+'<p>'+pl[i].title+'</p>'+'<input type="button" value="删除" id="del">';
+						}
+					}
+					$("#message").html(str)
+					for(i in pl){
+						var data=pl[i];
+						$("#del").click(function(){
+							console.log("删除")
+						})
+					}
+					
+				}
+			})
+		})
+	</script>
+</html>
